@@ -1,0 +1,6 @@
+Revision history for Perl extension String::Index.
+
+0.01  Mon Apr 12 13:54:34 2004
+	- original version; created by h2xs 1.23 with options
+		-A String::Index
+
