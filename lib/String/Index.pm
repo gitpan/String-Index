@@ -10,7 +10,7 @@ our @ISA = qw(Exporter);
 
 our @EXPORT_OK = qw( cindex ncindex crindex ncrindex );
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 require XSLoader;
 XSLoader::load('String::Index', $VERSION);
@@ -20,21 +20,21 @@ __END__
 
 =head1 NAME
 
-String::Index - Perl XS module for strchr()/index() hybrids
+String::Index - Perl XS module for strpbrk()/index() hybrids
 
 =head1 SYNOPSIS
 
   use String::Index qw( cindex ncindex crindex ncrindex );
   
   $first_vowel    =   cindex("broadcast", "aeiouy");  # 2
-  $last_vowel     =  rcindex("broadcast", "aeiouy");  # 6
+  $last_vowel     =  crindex("broadcast", "aeiouy");  # 6
   $first_nonvowel =  ncindex("eerily",    "aeiouy");  # 2
   $last_nonvowel  = ncrindex("eerily",    "aeiouy");  # 4
 
 =head1 ABSTRACT
 
 This module provides functions that are a cross between Perl's C<index()>
-and C<rindex()> and C's C<strchr()> and C<strrchr()>.
+and C<rindex()> and C's C<strpbrk()>.
 
 =head1 DESCRIPTION
 
@@ -87,7 +87,7 @@ specified, returns the last occurrence at or before that position.
 
 =head1 SEE ALSO
 
-See the man page for C<strchr()>.
+See the man page for C<strpbrk()>.
 
 =head1 AUTHOR
 
